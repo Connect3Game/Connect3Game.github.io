@@ -1,0 +1,250 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Add some space around the body */
+    color: #333;
+}
+
+/* Game Container Styling */
+.game-container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Set a percentage width for responsiveness */
+    max-width: 400px; /* Max width of container */
+    border: 3px solid #4CAF50; /* Fresh border color */
+    background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    backdrop-filter: blur(10px); /* Blurred backdrop */
+}
+
+/* Title styling */
+h1 {
+    margin-top: 20px;
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+
+/* Game board table styling */
+#game-board {
+    border-collapse: collapse;
+    margin: 20px auto;
+    border: 1px solid #bbb;
+}
+
+/* Table cell styling (game grid cells) */
+td.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border: 2px solid #999;
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for cells */
+td.cell:hover {
+    background-color: #d0d0d0;
+}
+
+/* Disc styles */
+.cell > .disc {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    animation-name: fall;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+/* Player 1 (Red) Disc */
+.player1 {
+    background-color: red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Player 2 (Yellow) Disc */
+.player2 {
+    background-color: yellow;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+/* Highlighting the cell when it's hovered */
+.cell.highlight {
+    box-shadow: 0 0 15px 5px green;
+    border: 2px solid green;
+}
+
+/* Player Turn Display */
+#player-turn {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Current Player's Disc Styling */
+.current-player-disc {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Player 1's current disc display */
+.current-player-disc.player1 {
+    background-color: red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Player 2's current disc display */
+.current-player-disc.player2 {
+    background-color: yellow;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+/* Restart Button Styling */
+#restart-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for restart button */
+#restart-btn:hover {
+    background-color: #45a049;
+}
+
+/* Falling Animation */
+@keyframes fall {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Adding a subtle shadow and glow to the game board */
+#game-board {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Add a backdrop for the game container with blur effect */
+.game-container {
+    background: rgba(255, 255, 255, 0.85); /* Soft backdrop */
+    backdrop-filter: blur(10px); /* Blur effect for modern look */
+}
+
+/* Ensure board cells are responsive */
+@media screen and (max-width: 600px) {
+    td.cell {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .game-container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    #player-turn {
+        font-size: 16px;
+    }
+    
+    #restart-btn {
+        font-size: 14px;
+    }
+}
+
+/* Wrapper for the game and sidebar */
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sidebar styling */
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    width: 100%;
+    border: 2px solid #4CAF50;
+    text-align: left;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.sidebar ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.sidebar p {
+    font-size: 14px;
+    color: #666;
+}
+
+.winner {
+    background-color: lightgreen;
+    animation: highlight 0.5s infinite alternate;
+}
+
+@keyframes highlight {
+    from {
+        background-color: lightgreen;
+    }
+    to {
+        background-color: limegreen;
+    }
+}
