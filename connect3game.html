@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Three</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="game-wrapper">
+        <div class="sidebar">
+            <h2>How to Play</h2>
+            <ul>
+                <li>Players take turns to drop their discs into the grid.</li>
+                <li>Player 1 uses the red disc, and Player 2 uses the yellow disc.</li>
+                <li>The goal is to connect three of your discs in a row:</li>
+                <ul>
+                    <li>Horizontally</li>
+                    <li>Vertically</li>
+                    <li>Diagonally</li>
+                </ul>
+                <li>The first player to connect three wins!</li>
+                <li>If all cells are filled and no one wins, the game ends in a draw.</li>
+            </ul>
+            <p>Click "Restart Game" to reset the board and start a new game.</p>
+        </div>
+    
+    
+    <div class="game-container">
+        <h1>Connect Three Game</h1>
+        <table id="game-board">
+            <tbody>
+                <tr>
+                    <td class="cell" data-row="0" data-col="0"></td>
+                    <td class="cell" data-row="0" data-col="1"></td>
+                    <td class="cell" data-row="0" data-col="2"></td>
+                </tr>
+                <tr>
+                    <td class="cell" data-row="1" data-col="0"></td>
+                    <td class="cell" data-row="1" data-col="1"></td>
+                    <td class="cell" data-row="1" data-col="2"></td>
+                </tr>
+                <tr>
+                    <td class="cell" data-row="2" data-col="0"></td>
+                    <td class="cell" data-row="2" data-col="1"></td>
+                    <td class="cell" data-row="2" data-col="2"></td>
+                </tr>
+                <tr>
+                    <td class="cell" data-row="3" data-col="0"></td>
+                    <td class="cell" data-row="3" data-col="1"></td>
+                    <td class="cell" data-row="3" data-col="2"></td>
+                </tr>
+                <tr>
+                    <td class="cell" data-row="4" data-col="0"></td>
+                    <td class="cell" data-row="4" data-col="1"></td>
+                    <td class="cell" data-row="4" data-col="2"></td>
+                </tr>
+                <tr>
+                    <td class="cell" data-row="5" data-col="0"></td>
+                    <td class="cell" data-row="5" data-col="1"></td>
+                    <td class="cell" data-row="5" data-col="2"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="game-controls">
+          <div id="player-turn">
+    <div class="current-player-disc player1"></div>
+    <span>Player's Turn</span>
+</div>
+
+            <button id="restart-btn">Restart Game</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
